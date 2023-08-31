@@ -1,16 +1,12 @@
-// import { useState } from "react";
-import styled from "@emotion/styled";
+// import React from "react";
+import RatingCard from "./components/ratingCard";
 
-const Header = styled.h1`
-  color: red;
-`;
-
-function App() {
+const App = () => {
   return (
     <>
-      <Header>Hello World</Header>
+      <RatingCard />
     </>
   );
-}
+};
 
 export default App;
