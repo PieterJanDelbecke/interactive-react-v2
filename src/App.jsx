@@ -1,11 +1,14 @@
 // import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import styled from "@emotion/styled";
+
+const Header = styled.h1`
+  color: red;
+`;
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header>Hello World</Header>
     </>
   );
 }
