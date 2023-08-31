@@ -12,11 +12,12 @@ const Container = styled.div`
 `;
 
 const Component = styled.div`
-  width: 360px;
+  width: 340px;
   height: 400px;
   border: 1px solid black;
   background-color: hsl(213, 19%, 18%);
   border-radius: 20px;
+  padding: 20px;
 `;
 
 const Title = styled.h1`
@@ -27,15 +28,37 @@ const Text = styled.p`
   color: hsl(216, 12%, 54%);
 `;
 
+const Numbers = styled.div`
+  width: 320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const NumberButton = styled.button`
   width: 45px;
   height: 45px;
   border-radius: 50%;
   border-style: none;
+  margin: 5px;
+  :hover {
+    background-color: hsl(25, 97%, 53%);
+  }
 `;
 
 const SubmitButton = styled.button`
   display: block;
+  margin: 5px auto;
+  border: none;
+  width: 320px;
+  height: 40px;
+  border-radius: 20px;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(25, 97%, 53%);
+  :hover {
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(0, 0%, 100%);
+  }
 `;
 
 const RatingCard = () => {
@@ -55,11 +78,13 @@ const RatingCard = () => {
           Please let us know how we did with your ssupport request. All feedback
           is appreciated to help us improve our offering!
         </Text>
-        {numbers.map((number) => (
-          <NumberButton key={number} onClick={() => clicked(number)}>
-            {number}
-          </NumberButton>
-        ))}
+        <Numbers>
+          {numbers.map((number) => (
+            <NumberButton key={number} onClick={() => clicked(number)}>
+              {number}
+            </NumberButton>
+          ))}
+        </Numbers>
         <SubmitButton>Submit</SubmitButton>
       </Component>
     </Container>
