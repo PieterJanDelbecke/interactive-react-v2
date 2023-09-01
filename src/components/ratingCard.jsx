@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Component = styled.div`
   width: 340px;
-  height: 400px;
+  /* height: 400px; */
   border: 1px solid black;
   background-color: hsl(213, 19%, 18%);
   border-radius: 20px;
@@ -29,8 +29,7 @@ const Text = styled.p`
 `;
 
 const Numbers = styled.div`
-  width: 320px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 `;
@@ -40,7 +39,7 @@ const NumberButton = styled.button`
   height: 45px;
   border-radius: 50%;
   border-style: none;
-  margin: 5px;
+  margin-block: 10px;
   :hover {
     background-color: hsl(25, 97%, 53%);
   }
@@ -48,9 +47,9 @@ const NumberButton = styled.button`
 
 const SubmitButton = styled.button`
   display: block;
-  margin: 5px auto;
+  margin: 10px auto;
   border: none;
-  width: 320px;
+  width: 100%;
   height: 40px;
   border-radius: 20px;
   color: hsl(0, 0%, 100%);
