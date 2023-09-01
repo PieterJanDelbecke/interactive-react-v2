@@ -1,5 +1,4 @@
 import { useState } from "react";
-import React from "react";
 import StarSvg from "../images/icon-star.svg";
 import styled from "@emotion/styled";
 
@@ -17,7 +16,7 @@ const Component = styled.div`
   width: 340px;
   /* height: 400px; */
   border: 1px solid black;
-  background-color: hsl(213, 19%, 18%);
+  background-color: black;
   border-radius: 20px;
   padding: 20px;
 `;
@@ -42,6 +41,9 @@ const NumberButton = styled.button`
   border-radius: 50%;
   border-style: none;
   margin-block: 10px;
+  background-color: ${(props) =>
+    props.selected ? "hsl(213, 19%, 18%)" : "hsl(217, 12%, 63%)"};
+  color: hsl(0, 0%, 100%);
   :hover {
     background-color: hsl(25, 97%, 53%);
   }
@@ -69,11 +71,11 @@ const Star = styled.img`
 
 const RatingCard = () => {
   const numbers = [1, 2, 3, 4, 5];
-  const [score, setScore] = useState(0);
+  const [selected, setSelected] = useState(0);
 
   const clicked = (number) => {
-    setScore(number);
-    console.log("score:", score);
+    setSelected(number);
+    console.log("selected:", selected);
   };
 
   return (
@@ -87,7 +89,11 @@ const RatingCard = () => {
         </Text>
         <Numbers>
           {numbers.map((number) => (
-            <NumberButton key={number} onClick={() => clicked(number)}>
+            <NumberButton
+              key={number}
+              onClick={() => clicked(number)}
+              selected={selected === number}
+            >
               {number}
             </NumberButton>
           ))}
