@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from "react";
+import StarSvg from "../images/icon-star.svg";
 import styled from "@emotion/styled";
 
 const Container = styled.div`
@@ -60,6 +62,11 @@ const SubmitButton = styled.button`
   }
 `;
 
+const Star = styled.img`
+  width: 18px;
+  height: 18px;
+`;
+
 const RatingCard = () => {
   const numbers = [1, 2, 3, 4, 5];
   const [score, setScore] = useState(0);
@@ -72,6 +79,7 @@ const RatingCard = () => {
   return (
     <Container>
       <Component>
+        <Star src={StarSvg} alt="star" />
         <Title>How did we do?</Title>
         <Text>
           Please let us know how we did with your ssupport request. All feedback
